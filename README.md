@@ -88,7 +88,7 @@ Frequency Range: Approximately 10 MHz to several GHz.
 
 Applications: Used in RF communication systems, including radio transmitters and receivers, as well as in frequency synthesizers.
 
-3. Crystal Oscillators
+2. Crystal Oscillators
 
 Operation: Uses a piezoelectric crystal (commonly quartz) to stabilize the frequency.
 
@@ -96,40 +96,59 @@ Frequency Range: Typically from a few kHz to around 200 MHz, with some specializ
 
 Applications: Precision timing applications, such as clock generation in digital circuits, GPS receivers, and communication systems requiring high frequency stability.
 
-5. RC Oscillators
+3. RC Oscillators
+
 Operation: Relies on resistors (R) and capacitors (C) to set the frequency of oscillation.
+
 Frequency Range: Generally from a few Hz to several MHz.
+
 Applications: Lower frequency applications, such as audio signal generation, tone generation in telephony, and as clock generators in low-frequency digital circuits.
 
-6. Ring Oscillators
+4. Ring Oscillators
+
 Operation: Composed of a series of inverters connected in a ring, with the number of inverters determining the frequency.
+
 Frequency Range: Can range from several MHz to several GHz.
+
 Applications: Often used in integrated circuits (ICs) for clock generation and timing purposes due to their simple design and ease of integration into CMOS technology.
 
-7. SAW (Surface Acoustic Wave) Oscillators
+5. SAW (Surface Acoustic Wave) Oscillators
+
 Operation: Uses surface acoustic waves on a piezoelectric substrate to generate oscillations.
+
 Frequency Range: Typically from 100 MHz to several GHz.
+
 Applications: High-frequency applications, including RF communication systems, radar systems, and frequency synthesis.
 
-8. VCOs in Integrated Circuits (IC VCOs)
+6. VCOs in Integrated Circuits (IC VCOs)
+
 Operation: These VCOs are integrated into ICs and can utilize various technologies like CMOS, BiCMOS, or GaAs.
+
 Frequency Range: Depends on the specific design and technology, typically from a few hundred MHz to tens of GHz.
+
 Applications: Used in PLLs for clock generation, frequency synthesis in communication systems, and signal modulation.
 
-9. MEMS (Microelectromechanical Systems) Oscillators
+7. MEMS (Microelectromechanical Systems) Oscillators
+
 Operation: Uses microfabricated mechanical resonators to generate oscillations.
+
 Frequency Range: Can range from a few kHz to several hundred MHz.
+
 Applications: Used in applications requiring miniaturized components with high stability, such as in portable and wearable electronics.
 
-10. Dielectric Resonator Oscillators (DROs)
+8. Dielectric Resonator Oscillators (DROs)
+
 Operation: Uses a dielectric resonator to stabilize the frequency.
+
 Frequency Range: Typically from 1 GHz to 50 GHz.
+
 Applications: Microwave communication systems, radar systems, and satellite communication.
 
 * The higher the quality factor (Q) of the oscillator, the lower the VCO phase noise is. However, higher Q circuits have narrower frequency ranges. Increasing the power supply will also lower the phase noise
 * One strategy for minimizing phase noise in such VCOs is to increase the voltage tuning range of the VTUNE to the VCO
   
 **Summary**
+
 LC Oscillators: 10 MHz to several GHz
 
 Crystal Oscillators: Few kHz to 200-500 MHz
