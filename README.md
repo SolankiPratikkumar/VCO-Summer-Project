@@ -195,3 +195,53 @@ DROs: 1 GHz to 50 GHz
 the circuit becomes nonlinear, the frequency shifts to 1/(6TD) (which is a lower value)
 
 ![6](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/a2a5dbe9-0178-494c-a99d-61d6aacfe60a)
+
+## Differential Ring VCO
+
+* Here, M5 operates in the deep triode region and amplifier A1 applies negative feedback to the gate of M5. If the loop gain is sufficiently large, the differential input voltage of A1 must be small, giving VP ≈ VREF and |VDS5| ≈ VDD − VREF .
+* Thus, the feedback ensures a relatively constant drain-source voltage even if I1 varies. In fact, as I1, say, decreases, A1 raises the gate voltage of M5 such that Ron5 I1 ≈ VDD − VREF
+
+  ![8](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/5407cb27-d1d5-4458-939a-264ac6ee308f)
+
+* The idea is to “serve” the on-resistance of M3 and M4 to that of M5 and vary the frequency by adjusting I1 and ISS simultaneously. If M3 and M4 are identical to M5 and ISS to I1, then VX and VY vary from VDD to VDD − VREF as M1 and M2 steer the tail current to one side or the other.
+* Thus, if process and temperature variations, say, decrease I1 and ISS, then A1 increases the on-resistance of M3–M5, forcing VP and hence VX and VY (when M1 or M2 is fully on) equal to VREF
+* The bandwidth of the op amp A1 in Figure is of some concern. If a change in Vcont takes a long time to change ωout , then the settling speed of a PLL using this VCO degrades significantly.
+
+## Current Folded Steerig VCO:
+
+![11](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/6beedcc8-a650-4029-868d-78d77d5c46c9)
+
+* In the circuit of Figure, the gain of each stage is varied by the tail current to achieve interpolation.But it is desirable to maintain constant voltage swings. We also recognize that the gain of the differential pair M5–M6 need not be varied because even if only the gain of M3–M4 drops to zero, the slow path is fully disabled.
+* We then surmise that if the tail currents of M1–M2 and M3–M4 vary in opposite directions such that their sum remains constant, we achieve both interpolation between the two paths and constant output swings.
+* The resulting circuit employs the differential pair M7–M8 to steer ISS between M1–M2 and M3–M4. If Vcont is very negative, M8 is off and only the fast path amplifies the input. Conversely, if Vcont is very positive, M7 is off and only the slow path is enabled.
+* Since the slow path in this case employs one more stage than the fast path, the VCO achieves a tuning range of roughly two to one. For operation with low supply voltages, the control pair M7–M8 can be replaced by the current-folding topology
+
+## Current Straved VCO
+
+![12](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/23921ac9-5244-47fc-9774-070a203495fa)
+
+* The current starved ring VCO illustrates a wide oscillation frequency range of 66–875 MHz at 1.8 V supply voltage using 180nm CMOS technology.
+* The circuit formed by using ring oscillator consists of odd number of gain stages connected in series and bias stage consists of current sink and current source. The
+oscillation is performed by ring oscillator and the frequency tuning is achieved by controlling the supply current.
+* The variable bias currents are used to control the oscillation frequency of this ring VCO. The transistors M1 and M2 operate as inverters while M3 and M4 operate as current sink and current source, respectively. The current sources limit the current available to inverters.
+* The drain currents of transistors M5 and M6 are same and are set by the input control voltage ðVctrlÞ. The current in transistors M4 and M5 is mirrored from bias stage to
+each cascaded inverting stage.
+* The bias circuit is used to provide correct polarization for transistors M3 and M4. The tuning of frequency of oscillation for a wide range can be done by changing the value of control voltage and this is the benefit of this configuration.
+* The linearity and bandwidth of VCO are determined by variation of control voltage ðVctrlÞ. The main drawback of this circuit is that under low frequency, the current starved inverter suffers from slow rise and falls at its output.
+* Frequency of oscillation is given by fosc = Id/2N*Ctotal*Vctrl
+  
+## LC VCO 
+
+* The oscillation frequency of LC topologies is equal to fosc = 1/(2π√LC), suggesting that only the inductor and capacitor values can be varied to tune the frequency, and other parameters such as bias currents and transistor transconductances affect fosc negligibly. Since it is difficult to vary the value of monolithic inductors, we simply change the tank capacitance to tune the oscillator.
+* Voltage-dependent capacitors are called “varactors.” A reverse-biased pn junction can serve as a varactor.
+
+  ![9](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/5438fd78-1d58-4074-95a7-844c7efebbe1)
+
+* . To avoid forward-biasing D1 and D2 significantly, Vcont must not exceed VX or VY by more than a few hundred millivolts. Thus,if the peak amplitude at each node is A, then 0 < Vcont < VDD − A + 300 mV, where it is assumed that a forward bias of 300 mV creates negligible current.
+* Interestingly, the circuit suffers from a trade-off between the output swing and the tuning range. This effect appears in most LC oscillators.
+* Note that, since the swings at X and Y are typically large (e.g., 1 Vpp at each node), the capacitanceof D1 and D2 varies with time. Nonetheless, the “average” value of the Capacitance is still a function of Vcont , providing the tuning range.
+
+![10](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/1a59cf0a-5eb4-470a-9a36-79c2cc6340b6)
+
+* So, the varactor diode is represented by Simple diode with series resistance of diode and a capacitance Cn represents the (voltage-dependent) capacitance between the n-well and the substrate.
+  
