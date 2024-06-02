@@ -166,3 +166,32 @@ MEMS Oscillators: Few kHz to several hundred MHz
 DROs: 1 GHz to 50 GHz
 
 
+## Three Stage Ring Oscillator
+
+* As two and single stage doesn't satisfy Brarkhausen Criteria so we have shown three stage Ring Oscillator
+
+  ![3](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/d43e5764-5e01-4039-ad90-04e45ac3a28a)
+
+* The circuit oscillates only if the frequency-dependent phase shift equals 180◦, i.e., if each stage contributes 60◦. The frequency at which this occurs is given by
+
+  ![4](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/c81ad6df-f5c6-40c2-bd75-912e91febbc1)
+
+* The minimum voltage gain per stage must be such that the magnitude of the loop gain at ωosc is equal to unity
+  
+  ![5](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/cd0d8768-9b34-4f64-914f-4e36c4c3f93a)
+
+* In summary, a three-stage ring oscillator requires a low-frequency gain of 2 per stage, and it oscillates at a frequency of √3 ω0, where ω0 is the 3-dB bandwidth of each stage
+* Since each stage contributes a frequency-dependent phase shift of 60◦ as well as a low-frequency signal inversion, the waveform at each node is 240◦ (or 120◦) out of phase with respect to its neighboring nodes
+* The ability to generate multiple phases is a very useful property of ring oscillators
+* Suppose the circuit is released with an initial voltage at each node equal to the trip point of the inverters,Vtrip(The trip point of an inverter is the input voltage that results in an equal output voltage)
+* With identical stages and no noise in the devices, the circuit would remain in this state indefinitely,but noise components disturb each node voltage, yielding a growing waveform. The signal eventually exhibits rail-to-rail swings.
+
+![7](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/999f236c-742b-4a7f-9e28-81b0cdd62820)
+
+* Lets begins with VX = VDD . Under this condition, VY = 0 and VZ = VDD. Thus, when the circuit is released, VX begins to fall to zero (because the first inverter senses a high input), forcing VY to rise to VDD after one inverter delay, TD, and VZ to fall to zero after another inverter delay.
+* The circuit therefore oscillates with a delay of TD between consecutive node voltages, yielding a period of 6TD
+* While the small-signal oscillation frequency is given by A0√3ω0/2
+* when the circuit is released with all inverters at their trip point, the oscillation begins with a frequency of √3A0ω0/2, but, as the amplitude grows and
+the circuit becomes nonlinear, the frequency shifts to 1/(6TD) (which is a lower value)
+
+![6](https://github.com/SolankiPratikkumar/VCO-Summer-Project/assets/140999250/a2a5dbe9-0178-494c-a99d-61d6aacfe60a)
