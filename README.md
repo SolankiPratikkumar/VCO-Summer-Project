@@ -163,3 +163,11 @@ each cascaded inverting stage.
 
 * So, the varactor diode is represented by Simple diode with series resistance of diode and a capacitance Cn represents the (voltage-dependent) capacitance between the n-well and the substrate.
   
+# Inductor Capacitor VCO (LCVCO):
+
+## Basics:
+
+* An inductor L1 placed in parallel with a capacitor C1 resonates at a frequency ωres = 1/√L1C1. At this frequency, the impedances of the inductor, j L1ωres, and the capacitor, 1/(jC1ωres), are equal and opposite, thereby yielding an infinite impedance. So, the circuit has an infinite quality factor, Q
+* In practice, inductors (and capacitors) suffer from resistive components.For example, the series resistance of the metal wire used in the inductor can be modeled as shown in below Figure . We define the Q of the inductor as L1ω/RS. For this circuit,we can show that the equivalent impedance is given by
+
+
